@@ -1,3 +1,5 @@
+package ru.tct.Benchmark;
+
 import org.openjdk.jmh.annotations.Benchmark;
 /**
  * Created by dds on 19.06.2016.

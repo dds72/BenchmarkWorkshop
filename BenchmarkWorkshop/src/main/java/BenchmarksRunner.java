@@ -2,6 +2,7 @@ import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
+import ru.tct.Benchmark.BenchmarkContainer;
 
 import java.io.IOException;
 
@@ -14,7 +15,7 @@ public class BenchmarksRunner {
             for (String arg :
                     args) {
                 switch (Commands.valueOf(arg)) {
-                    case benchmark:
+                    case BENCHMARK:
                         Options opt = new OptionsBuilder()
                                 .include(BenchmarkContainer.class.getSimpleName())
                                 .warmupIterations(5)
@@ -25,7 +26,7 @@ public class BenchmarksRunner {
                         new Runner(opt).run();
                         break;
 
-                    case pause:
+                    case PAUSE:
 
                         System.in.read();
                         break;
@@ -42,7 +43,7 @@ public class BenchmarksRunner {
     }
 
     private enum Commands {
-        benchmark,
-        pause
+        BENCHMARK,
+        PAUSE
     }
 }
